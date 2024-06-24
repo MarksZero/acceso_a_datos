@@ -1,0 +1,38 @@
+--Crear base de datos
+CREATE DATABASE imperium;
+
+-- Tabla de usuarios
+CREATE TABLE usuarios (
+                          id_usuario SERIAL PRIMARY KEY,
+                          nombre VARCHAR(100) NOT NULL,
+                          apodo VARCHAR(50)
+);
+
+-- Tabla de cupos
+CREATE TABLE cupos (
+                       id_cupo SERIAL PRIMARY KEY,
+                       id_usuario INTEGER REFERENCES usuarios(id_usuario),
+                       cantidad INTEGER NOT NULL,
+                       razon VARCHAR(200) NOT NULL,
+                       fecha_obtencion DATE NOT NULL
+);
+
+-- Tabla de transacciones
+CREATE TABLE transacciones (
+                               id_transaccion SERIAL PRIMARY KEY,
+                               id_cupo INTEGER REFERENCES cupos(id_cupo),
+                               cantidad INTEGER NOT NULL,
+                               fecha_transaccion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+-- Tabla de inventario
+CREATE TABLE inventario (
+                            id_inventario SERIAL PRIMARY KEY,
+                            producto VARCHAR(100) NOT NULL,
+                            stock INTEGER NOT NULL,
+                            precio DECIMAL(10, 2) NOT NULL
+);
+
+select * from usuarios;
+select * from cupos;
+select * from transacciones;
+select * from inventario;
