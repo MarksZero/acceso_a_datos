@@ -16,5 +16,4 @@ Las opciones del menú son las siguientes:
 
 ## Notas adicionales
 
-- Todas las operaciones de la base de datos se realizan dentro de transacciones para garantizar la atomicidad y la consistencia. Si ocurre un error durante una operación, todas las modificaciones de la base de datos se revertirán a su estado anterior a la transacción.
 - La aplicación maneja el control de concurrencia utilizando bloqueos. Cuando se inicia una transacción, la base de datos coloca bloqueos en los registros que están siendo modificados para evitar que otros usuarios los modifiquen hasta que la transacción se haya confirmado o revertido.
