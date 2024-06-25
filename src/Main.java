@@ -78,6 +78,7 @@ public class Main {
         System.out.println("[2] Asignar cupo");
         System.out.println("[3] Mostrar usuario");
         System.out.println("[4] Eliminar usuario");
+        System.out.println("[5] Salir");
 
         int opcionGestion = scanner.nextInt();
         scanner.nextLine();
@@ -114,6 +115,8 @@ public class Main {
                 scanner.nextLine();
                 GestorUsuarios.eliminarUsuario(conexion, idUsuario);
                 break;
+            case 5:
+                break;
             default:
                 System.out.println("Opción no válida. Intente de nuevo.");
                 break;
@@ -125,6 +128,7 @@ public class Main {
         System.out.println("[1] Crear producto");
         System.out.println("[2] Mostrar productos");
         System.out.println("[3] Eliminar producto");
+        System.out.println("[4] Salir");
 
         int opcionInventario = scanner.nextInt();
         scanner.nextLine();
@@ -151,6 +155,8 @@ public class Main {
                 idProducto = scanner.nextInt();
                 scanner.nextLine();
                 GestorInventario.eliminarProducto(conexion, idProducto);
+                break;
+            case 4:
                 break;
             default:
                 System.out.println("Opción no válida. Intente de nuevo.");
